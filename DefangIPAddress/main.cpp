@@ -8,8 +8,25 @@
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+//For ease of coding
+using namespace std;
+
+string Defang(string IP) {
+    string finalIP;
+    for(int i=0; i<IP.length(); i++){
+        if(IP[i] == '.'){
+            finalIP += "[.]";
+        }
+        else{
+            finalIP += IP[i];
+        }
+    }
+    return finalIP;
+}
+
+int main() {
+    string IP;
+    cout << "Please input an IP address\n";
+    cin >> IP;
+    cout << "\nDefanged IP is " << Defang(IP) << "\n";
 }
